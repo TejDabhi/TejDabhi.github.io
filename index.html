@@ -1,142 +1,364 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tej Dabhi | Aspiring MERN STACK</title>
-  <meta name="description" content="Portfolio of Om Vanra — Aspiring Data Analyst skilled in SQL, Python, Excel & Power BI. Turning raw data into actionable insights.">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Tej Dabhi | MERN Stack Developer</title>
+
   <script src="https://cdn.tailwindcss.com"></script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  >
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  >
+
   <script>
     tailwind.config = {
+      darkMode: "class",
       theme: {
         extend: {
-          fontFamily: { inter: ['Inter', 'sans-serif'] },
+          fontFamily: {
+            inter: ["Inter", "sans-serif"],
+          },
           colors: {
-            dark: { 900: '#0a0a0f', 800: '#12121a', 700: '#1a1a2e', 600: '#22223a' },
-            accent: { DEFAULT: '#6366f1', light: '#818cf8', dark: '#4f46e5' },
-            cyan: { DEFAULT: '#22d3ee', dark: '#06b6d4' }
-          }
-        }
+            dark: {
+              900: "#0a0a0f",
+              800: "#12121a",
+              700: "#1a1a2e",
+              600: "#22223a",
+            },
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      max-width: 100%;
+    }
+
+    html,
+    body {
+      overflow-x: hidden;
+      width: 100%;
+      font-family: "Inter", sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #0a0a0f;
+      transition: all 0.3s ease;
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, #6366f1, #22d3ee);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .glass {
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .card-hover {
+      transition: all 0.4s ease;
+    }
+
+    .card-hover:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(99, 102, 241, 0.2);
+    }
+
+    .skill-chip {
+      transition: all 0.3s ease;
+    }
+
+    .skill-chip:hover {
+      transform: scale(1.05);
+    }
+
+    .hero-grid {
+      background-image: radial-gradient(
+        rgba(99, 102, 241, 0.08) 1px,
+        transparent 1px
+      );
+      background-size: 40px 40px;
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.7s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #6366f1, #4f46e5);
+      transition: 0.3s;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(99, 102, 241, 0.4);
+    }
+
+    .pulse-dot {
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%,
+      100% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0.4;
       }
     }
-  </script>
-  <style>
-    body { font-family: 'Inter', sans-serif; background: #0a0a0f; }
-    .gradient-text { background: linear-gradient(135deg, #6366f1, #22d3ee); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-    .glass { background: rgba(255,255,255,0.03); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.06); }
-    .glow { box-shadow: 0 0 30px rgba(99,102,241,0.15); }
-    .card-hover { transition: all 0.4s cubic-bezier(0.4,0,0.2,1); }
-    .card-hover:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(99,102,241,0.2); border-color: rgba(99,102,241,0.3); }
-    .skill-chip { transition: all 0.3s ease; }
-    .skill-chip:hover { transform: scale(1.05); background: rgba(99,102,241,0.15); border-color: rgba(99,102,241,0.5); }
-    .hero-grid { background-image: radial-gradient(rgba(99,102,241,0.08) 1px, transparent 1px); background-size: 40px 40px; }
-    .fade-in { opacity: 0; transform: translateY(30px); transition: all 0.7s ease; }
-    .fade-in.visible { opacity: 1; transform: translateY(0); }
-    .pulse-dot { animation: pulse 2s infinite; }
-    @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.4; } }
-    .btn-primary { background: linear-gradient(135deg, #6366f1, #4f46e5); transition: all 0.3s ease; }
-    .btn-primary:hover { box-shadow: 0 8px 25px rgba(99,102,241,0.4); transform: translateY(-2px); }
-    .input-field:focus { border-color: #6366f1; box-shadow: 0 0 0 3px rgba(99,102,241,0.15); }
-    ::-webkit-scrollbar { width: 6px; }
-    ::-webkit-scrollbar-track { background: #0a0a0f; }
-    ::-webkit-scrollbar-thumb { background: #6366f1; border-radius: 3px; }
+
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #6366f1;
+      border-radius: 10px;
+    }
+
+    /* LIGHT MODE */
+
+    body.light-mode {
+      background: #f5f5f5;
+      color: #111827;
+    }
+
+    body.light-mode .glass {
+      background: rgba(255, 255, 255, 0.7);
+      border: 1px solid rgba(0, 0, 0, 0.08);
+    }
+
+    body.light-mode .text-white {
+      color: #111827 !important;
+    }
+
+    body.light-mode .text-gray-300,
+    body.light-mode .text-gray-400,
+    body.light-mode .text-gray-500,
+    body.light-mode .text-gray-600 {
+      color: #4b5563 !important;
+    }
+
+    body.light-mode .bg-dark-800\/50 {
+      background: #ffffff !important;
+    }
+
+    body.light-mode nav {
+      background: rgba(255, 255, 255, 0.9);
+    }
+
+    body.light-mode footer {
+      border-color: rgba(0, 0, 0, 0.1);
+    }
   </style>
 </head>
-<body class="text-gray-300 overflow-x-hidden">
 
-  <!-- ============ NAVBAR ============ -->
-  <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300">
-    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-      <a href="#" class="text-xl font-bold gradient-text">TEJ.</a>
-      <div class="hidden md:flex gap-8 text-sm font-medium">
-        <a href="#about" class="hover:text-white transition">About</a>
-        <a href="#skills" class="hover:text-white transition">Skills</a>
-        <a href="#projects" class="hover:text-white transition">Projects</a>
-        <a href="#contact" class="hover:text-white transition">Contact</a>
+<body class="text-gray-300">
+
+  <!-- NAVBAR -->
+  <nav
+    id="navbar"
+    class="fixed top-0 w-full z-50 transition-all duration-300"
+  >
+    <div
+      class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center"
+    >
+
+      <a href="#" class="text-2xl font-bold gradient-text">
+        TEJ.
+      </a>
+
+      <!-- Desktop Menu -->
+      <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+
+        <a href="#about" class="hover:text-white transition">
+          About
+        </a>
+
+        <a href="#skills" class="hover:text-white transition">
+          Skills
+        </a>
+
+        <a href="#projects" class="hover:text-white transition">
+          Projects
+        </a>
+
+        <a href="#contact" class="hover:text-white transition">
+          Contact
+        </a>
+
+        <!-- Theme Toggle -->
+        <button
+          id="themeToggle"
+          class="w-10 h-10 rounded-xl glass flex items-center justify-center text-white"
+        >
+          <i class="fas fa-moon"></i>
+        </button>
+
       </div>
-      <button id="menuBtn" class="md:hidden text-white text-xl"><i class="fas fa-bars"></i></button>
+
+      <!-- Mobile Buttons -->
+      <div class="flex items-center gap-3 md:hidden">
+
+        <button
+          id="themeToggleMobile"
+          class="w-10 h-10 rounded-xl glass flex items-center justify-center text-white"
+        >
+          <i class="fas fa-moon"></i>
+        </button>
+
+        <button id="menuBtn" class="text-white text-xl">
+          <i class="fas fa-bars"></i>
+        </button>
+
+      </div>
     </div>
+
     <!-- Mobile Menu -->
-    <div id="mobileMenu" class="hidden md:hidden glass mx-4 rounded-xl p-4 space-y-3 text-center">
-      <a href="#about" class="block py-2 hover:text-white transition">About</a>
-      <a href="#skills" class="block py-2 hover:text-white transition">Skills</a>
-      <a href="#projects" class="block py-2 hover:text-white transition">Projects</a>
-      <a href="#contact" class="block py-2 hover:text-white transition">Contact</a>
+    <div
+      id="mobileMenu"
+      class="hidden md:hidden glass mx-4 rounded-xl p-4 space-y-3 text-center"
+    >
+      <a href="#about" class="block py-2">About</a>
+      <a href="#skills" class="block py-2">Skills</a>
+      <a href="#projects" class="block py-2">Projects</a>
+      <a href="#contact" class="block py-2">Contact</a>
     </div>
   </nav>
 
-  <!-- ============ HERO SECTION ============ -->
+  <!-- HERO -->
   <section class="min-h-screen flex items-center relative hero-grid">
-    <!-- Ambient Glow -->
-    <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl"></div>
-    <div class="absolute bottom-1/4 right-1/4 w-72 h-72 bg-cyan-500/10 rounded-full blur-3xl"></div>
+
+    <div
+      class="absolute top-1/4 left-1/4 w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl"
+    ></div>
+
+    <div
+      class="absolute bottom-1/4 right-1/4 w-72 h-72 bg-cyan-500/10 rounded-full blur-3xl"
+    ></div>
 
     <div class="max-w-6xl mx-auto px-6 py-32 relative z-10">
+
       <div class="max-w-3xl">
-        <!-- Status Badge -->
-        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-sm mb-8">
-          <span class="w-2 h-2 bg-green-400 rounded-full pulse-dot"></span>
-          <span class="text-gray-400">Open to Internship Opportunities</span>
+
+        <div
+          class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-sm mb-8"
+        >
+          <span
+            class="w-2 h-2 bg-green-400 rounded-full pulse-dot"
+          ></span>
+
+          <span class="text-gray-400">
+            Open to Internship Opportunities
+          </span>
         </div>
 
-        <h1 class="text-5xl md:text-7xl font-black text-white leading-tight mb-6">
-          Hi, I'm <span class="gradient-text">Tej Dabhi</span>
+        <h1
+          class="text-5xl md:text-7xl font-black text-white leading-tight mb-6"
+        >
+          Hi, I'm
+          <span class="gradient-text">
+            Tej Dabhi
+          </span>
         </h1>
-        <p class="text-xl md:text-2xl text-gray-400 font-light mb-4">
-          Aspiring <span class="text-white font-medium">Mern Stack Developer</span>
-        </p>
-        <p class="text-lg text-gray-500 max-w-xl mb-10 leading-relaxed">
-        I build modern and scalable full-stack web applications using 
-        <span class="text-cyan-400">MongoDB</span>, 
-        <span class="text-cyan-400">Express.js</span>, 
-        <span class="text-cyan-400">React.js</span>, and 
-        <span class="text-cyan-400">Node.js</span>. 
-        Passionate about creating responsive user interfaces, developing secure backend APIs, 
-        and delivering seamless user experiences through clean and efficient code.
+
+        <p class="text-xl md:text-2xl text-gray-400 mb-6">
+          Full Stack MERN Developer
         </p>
 
-        <!-- CTA Buttons -->
-        <div class="flex flex-wrap gap-4 mb-12">
-          <a href="#projects" class="btn-primary px-8 py-3.5 rounded-xl text-white font-semibold inline-flex items-center gap-2">
-            <i class="fas fa-chart-bar"></i> View My Work
+        <p
+          class="text-lg text-gray-500 max-w-2xl leading-relaxed mb-10"
+        >
+          I build modern and scalable web applications using
+          MongoDB, Express.js, React.js, and Node.js.
+          Passionate about creating responsive interfaces,
+          secure backend APIs, and smooth user experiences.
+        </p>
+
+        <div class="flex flex-wrap gap-4 mb-10">
+
+          <a
+            href="#projects"
+            class="btn-primary px-8 py-3 rounded-xl text-white font-semibold"
+          >
+            View Projects
           </a>
-          <a href="#contact" class="px-8 py-3.5 rounded-xl border border-gray-700 text-white font-semibold hover:border-indigo-500 transition-all inline-flex items-center gap-2">
-            <i class="fas fa-envelope"></i> Contact Me
+
+          <a
+            href="#contact"
+            class="px-8 py-3 rounded-xl border border-gray-700 hover:border-indigo-500 transition"
+          >
+            Contact Me
           </a>
+
         </div>
 
-        <!-- Social Links -->
+        <!-- Social -->
         <div class="flex gap-4">
-          <a href="https://github.com/TejDabhi" target="_blank" class="w-12 h-12 rounded-xl glass flex items-center justify-center text-gray-400 hover:text-white hover:border-indigo-500 transition-all">
-            <i class="fab fa-github text-lg"></i>
-          </a>
-          <a href="https://www.linkedin.com/in/tej-dabhi/" target="_blank" class="w-12 h-12 rounded-xl glass flex items-center justify-center text-gray-400 hover:text-white hover:border-indigo-500 transition-all">
-            <i class="fab fa-linkedin-in text-lg"></i>
-          </a>
-          <a href="mailto:tejdabhi84@gmail.com" class="w-12 h-12 rounded-xl glass flex items-center justify-center text-gray-400 hover:text-white hover:border-indigo-500 transition-all">
-            <i class="fas fa-envelope text-lg"></i>
-          </a>
-        </div>
-      </div>
-    </div>
 
-    <!-- Scroll Indicator -->
-    <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-gray-600 text-xs">
-      <span>Scroll</span>
-      <div class="w-5 h-8 border border-gray-700 rounded-full flex justify-center pt-1.5">
-        <div class="w-1 h-2 bg-indigo-500 rounded-full animate-bounce"></div>
+          <a
+            href="https://github.com/TejDabhi"
+            target="_blank"
+            class="w-12 h-12 rounded-xl glass flex items-center justify-center"
+          >
+            <i class="fab fa-github"></i>
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/tej-dabhi/"
+            target="_blank"
+            class="w-12 h-12 rounded-xl glass flex items-center justify-center"
+          >
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+
+          <a
+            href="mailto:tejdabhi84@gmail.com"
+            class="w-12 h-12 rounded-xl glass flex items-center justify-center"
+          >
+            <i class="fas fa-envelope"></i>
+          </a>
+
+        </div>
+
       </div>
     </div>
   </section>
 
-  <!-- ============ ABOUT SECTION ============ -->
+  <!-- ABOUT -->
   <section id="about" class="py-24">
-  <div class="max-w-6xl mx-auto px-6">
-    <div class="fade-in">
-      <p class="text-indigo-400 font-semibold text-sm tracking-widest uppercase mb-2">
+    <div class="max-w-6xl mx-auto px-6 fade-in">
+
+      <p
+        class="text-indigo-400 font-semibold text-sm uppercase mb-2"
+      >
         About Me
       </p>
 
@@ -144,57 +366,23 @@
         Who I Am
       </h2>
 
-      <div class="grid md:grid-cols-2 gap-12 items-center">
+      <div class="grid md:grid-cols-2 gap-12">
 
-        <!-- Bio -->
         <div>
 
           <p class="text-gray-400 leading-relaxed mb-6">
-            I'm a passionate 
-            <span class="text-white font-medium">Full Stack MERN Developer</span> 
-            who enjoys building modern, scalable, and user-friendly web applications.
-            I love solving real-world problems through clean code and creative solutions.
+            I'm a passionate Full Stack MERN Developer who
+            loves building scalable and modern applications.
           </p>
 
-          <p class="text-gray-400 leading-relaxed mb-8">
-            I'm skilled in 
-            <span class="text-cyan-400">MongoDB</span>, 
-            <span class="text-cyan-400">Express.js</span>, 
-            <span class="text-cyan-400">React.js</span>, and 
-            <span class="text-cyan-400">Node.js</span>. 
-            I also have experience working with APIs, authentication systems, databases, 
-            and responsive UI development. Currently, I'm expanding my backend and DevOps knowledge 
-            by learning <span class="text-cyan-400">ASP.NET Core</span>, 
-            <span class="text-cyan-400">Docker</span>, and 
-            <span class="text-cyan-400">Kubernetes</span>.
+          <p class="text-gray-400 leading-relaxed">
+            Skilled in MongoDB, Express.js, React.js, Node.js,
+            APIs, authentication systems, and responsive UI.
           </p>
 
-          <div class="flex gap-6 text-sm">
-
-            <div class="text-center">
-              <p class="text-3xl font-bold text-white">10+</p>
-              <p class="text-gray-500 mt-1">Tech Skills</p>
-            </div>
-
-            <div class="text-center">
-              <p class="text-3xl font-bold text-white">5+</p>
-              <p class="text-gray-500 mt-1">Projects</p>
-            </div>
-
-            <div class="text-center">
-              <p class="text-3xl font-bold text-white">∞</p>
-              <p class="text-gray-500 mt-1">Learning</p>
-            </div>
-
-          </div>
         </div>
 
-        <!-- Info Card -->
-        <div class="glass rounded-2xl p-8 glow">
-
-          <h3 class="text-white font-semibold text-lg mb-6">
-            Quick Info
-          </h3>
+        <div class="glass rounded-2xl p-8">
 
           <div class="space-y-4 text-sm">
 
@@ -205,182 +393,76 @@
 
             <div class="flex justify-between border-b border-gray-800 pb-3">
               <span class="text-gray-500">Role</span>
-              <span class="text-indigo-400">MERN Stack Developer</span>
-            </div>
-
-            <div class="flex justify-between border-b border-gray-800 pb-3">
-              <span class="text-gray-500">Email</span>
-              <span class="text-white">tejdabhi84@gmail.com</span>
-            </div>
-
-            <div class="flex justify-between border-b border-gray-800 pb-3">
-              <span class="text-gray-500">Phone</span>
-              <span class="text-white">7359685715</span>
+              <span class="text-indigo-400">
+                MERN Stack Developer
+              </span>
             </div>
 
             <div class="flex justify-between">
               <span class="text-gray-500">Status</span>
 
-              <span class="text-green-400 flex items-center gap-1.5">
-                <span class="w-1.5 h-1.5 bg-green-400 rounded-full pulse-dot"></span>
+              <span class="text-green-400">
                 Available
               </span>
             </div>
 
           </div>
+
         </div>
 
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-  <!-- ============ SKILLS SECTION ============ -->
+  <!-- SKILLS -->
   <section id="skills" class="py-24 bg-dark-800/50">
-  <div class="max-w-6xl mx-auto px-6">
-    <div class="fade-in">
 
-      <p class="text-indigo-400 font-semibold text-sm tracking-widest uppercase mb-2">
-        My Toolkit
+    <div class="max-w-6xl mx-auto px-6 fade-in">
+
+      <p
+        class="text-indigo-400 font-semibold text-sm uppercase mb-2"
+      >
+        Skills
       </p>
 
       <h2 class="text-4xl font-bold text-white mb-12">
-        Skills & Technologies
+        Technologies
       </h2>
 
       <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
 
-        <!-- MongoDB -->
-        <div class="skill-chip glass rounded-2xl p-8 text-center cursor-default">
-          <div class="w-16 h-16 mx-auto mb-4 rounded-xl bg-green-500/10 flex items-center justify-center">
-            <i class="fas fa-database text-2xl text-green-400"></i>
-          </div>
-
-          <h3 class="text-white font-semibold mb-1">
-            MongoDB
-          </h3>
-
-          <p class="text-gray-500 text-xs">
-            Database Management
-          </p>
+        <div class="skill-chip glass rounded-2xl p-8 text-center">
+          <i class="fab fa-react text-4xl text-cyan-400 mb-4"></i>
+          <h3 class="text-white font-semibold">React.js</h3>
         </div>
 
-        <!-- Express JS -->
-        <div class="skill-chip glass rounded-2xl p-8 text-center cursor-default">
-          <div class="w-16 h-16 mx-auto mb-4 rounded-xl bg-gray-500/10 flex items-center justify-center">
-            <i class="fas fa-server text-2xl text-gray-300"></i>
-          </div>
-
-          <h3 class="text-white font-semibold mb-1">
-            Express.js
-          </h3>
-
-          <p class="text-gray-500 text-xs">
-            Backend Development
-          </p>
+        <div class="skill-chip glass rounded-2xl p-8 text-center">
+          <i class="fab fa-node-js text-4xl text-green-400 mb-4"></i>
+          <h3 class="text-white font-semibold">Node.js</h3>
         </div>
 
-        <!-- React JS -->
-        <div class="skill-chip glass rounded-2xl p-8 text-center cursor-default">
-          <div class="w-16 h-16 mx-auto mb-4 rounded-xl bg-cyan-500/10 flex items-center justify-center">
-            <i class="fab fa-react text-2xl text-cyan-400"></i>
-          </div>
-
-          <h3 class="text-white font-semibold mb-1">
-            React.js
-          </h3>
-
-          <p class="text-gray-500 text-xs">
-            Frontend UI Development
-          </p>
+        <div class="skill-chip glass rounded-2xl p-8 text-center">
+          <i class="fas fa-database text-4xl text-green-500 mb-4"></i>
+          <h3 class="text-white font-semibold">MongoDB</h3>
         </div>
 
-        <!-- Node JS -->
-        <div class="skill-chip glass rounded-2xl p-8 text-center cursor-default">
-          <div class="w-16 h-16 mx-auto mb-4 rounded-xl bg-lime-500/10 flex items-center justify-center">
-            <i class="fab fa-node-js text-2xl text-lime-400"></i>
-          </div>
-
-          <h3 class="text-white font-semibold mb-1">
-            Node.js
-          </h3>
-
-          <p class="text-gray-500 text-xs">
-            Server Side Development
-          </p>
-        </div>
-
-        <!-- JavaScript -->
-        <div class="skill-chip glass rounded-2xl p-8 text-center cursor-default">
-          <div class="w-16 h-16 mx-auto mb-4 rounded-xl bg-yellow-500/10 flex items-center justify-center">
-            <i class="fab fa-js text-2xl text-yellow-400"></i>
-          </div>
-
-          <h3 class="text-white font-semibold mb-1">
-            JavaScript
-          </h3>
-
-          <p class="text-gray-500 text-xs">
-            Dynamic Web Development
-          </p>
-        </div>
-
-        <!-- ASP.NET -->
-        <div class="skill-chip glass rounded-2xl p-8 text-center cursor-default">
-          <div class="w-16 h-16 mx-auto mb-4 rounded-xl bg-purple-500/10 flex items-center justify-center">
-            <i class="fas fa-code text-2xl text-purple-400"></i>
-          </div>
-
-          <h3 class="text-white font-semibold mb-1">
-            ASP.NET Core
-          </h3>
-
-          <p class="text-gray-500 text-xs">
-            Backend APIs
-          </p>
-        </div>
-
-        <!-- Docker -->
-        <div class="skill-chip glass rounded-2xl p-8 text-center cursor-default">
-          <div class="w-16 h-16 mx-auto mb-4 rounded-xl bg-blue-500/10 flex items-center justify-center">
-            <i class="fab fa-docker text-2xl text-blue-400"></i>
-          </div>
-
-          <h3 class="text-white font-semibold mb-1">
-            Docker
-          </h3>
-
-          <p class="text-gray-500 text-xs">
-            Containerization
-          </p>
-        </div>
-
-        <!-- GitHub -->
-        <div class="skill-chip glass rounded-2xl p-8 text-center cursor-default">
-          <div class="w-16 h-16 mx-auto mb-4 rounded-xl bg-gray-700/20 flex items-center justify-center">
-            <i class="fab fa-github text-2xl text-white"></i>
-          </div>
-
-          <h3 class="text-white font-semibold mb-1">
-            Git & GitHub
-          </h3>
-
-          <p class="text-gray-500 text-xs">
-            Version Control
-          </p>
+        <div class="skill-chip glass rounded-2xl p-8 text-center">
+          <i class="fas fa-server text-4xl text-gray-300 mb-4"></i>
+          <h3 class="text-white font-semibold">Express.js</h3>
         </div>
 
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-  <!-- ============ PROJECTS SECTION ============ -->
+  <!-- PROJECTS -->
   <section id="projects" class="py-24">
-  <div class="max-w-6xl mx-auto px-6">
-    <div class="fade-in">
 
-      <p class="text-indigo-400 font-semibold text-sm tracking-widest uppercase mb-2">
+    <div class="max-w-6xl mx-auto px-6 fade-in">
+
+      <p
+        class="text-indigo-400 font-semibold text-sm uppercase mb-2"
+      >
         Portfolio
       </p>
 
@@ -390,11 +472,13 @@
 
       <div class="grid md:grid-cols-3 gap-8">
 
-        <!-- Project 1 -->
+        <!-- Project -->
         <div class="card-hover glass rounded-2xl overflow-hidden">
 
-          <div class="h-44 bg-gradient-to-br from-indigo-600/20 to-cyan-600/20 flex items-center justify-center">
-            <i class="fas fa-pencil-ruler text-5xl text-cyan-400/60"></i>
+          <div
+            class="h-44 bg-gradient-to-br from-indigo-600/20 to-cyan-600/20 flex items-center justify-center"
+          >
+            <i class="fas fa-pencil-ruler text-5xl text-cyan-400"></i>
           </div>
 
           <div class="p-6">
@@ -403,265 +487,248 @@
               Figma Clone
             </h3>
 
-            <p class="text-gray-500 text-sm mb-4 leading-relaxed">
-              A real-time collaborative Figma Clone built using React.js,
-              Fabric.js, and Liveblocks. Users can draw, resize, edit objects,
-              and collaborate live with cursor tracking and real-time updates.
+            <p class="text-gray-500 text-sm mb-4">
+              Real-time collaborative Figma clone built using
+              React.js, Fabric.js, and Liveblocks.
             </p>
 
-            <div class="flex flex-wrap gap-2 mb-5">
-
-              <span class="text-xs px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
-                React.js
-              </span>
-
-              <span class="text-xs px-3 py-1 rounded-full bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">
-                Fabric.js
-              </span>
-
-              <span class="text-xs px-3 py-1 rounded-full bg-purple-500/10 text-purple-400 border border-purple-500/20">
-                Liveblocks
-              </span>
-
-            </div>
-
-            <a href="https://liveblocks-figma-clone-omega.vercel.app/"
-               target="_blank"
-               class="inline-flex items-center gap-2 text-sm text-indigo-400 hover:text-white transition font-medium">
-
-              Live Demo
-              <i class="fas fa-arrow-right text-xs"></i>
-
+            <a
+              href="https://liveblocks-figma-clone-omega.vercel.app/"
+              target="_blank"
+              class="text-indigo-400"
+            >
+              Live Demo →
             </a>
 
           </div>
         </div>
 
-        <!-- Project 2 -->
+        <!-- Project -->
         <div class="card-hover glass rounded-2xl overflow-hidden">
 
-          <div class="h-44 bg-gradient-to-br from-green-600/20 to-lime-600/20 flex items-center justify-center">
-            <i class="fas fa-film text-5xl text-green-400/60"></i>
+          <div
+            class="h-44 bg-gradient-to-br from-green-600/20 to-lime-600/20 flex items-center justify-center"
+          >
+            <i class="fas fa-film text-5xl text-green-400"></i>
           </div>
 
           <div class="p-6">
 
             <h3 class="text-white font-bold text-lg mb-2">
-              Theatre Ticket Booking System
+              Theatre Booking System
             </h3>
 
-            <p class="text-gray-500 text-sm mb-4 leading-relaxed">
-              A full-stack MERN theatre booking application built using MongoDB,
-              Express.js, React.js, and Node.js. Features include user authentication,
-              movie management, ticket booking, secure backend APIs, and responsive UI.
+            <p class="text-gray-500 text-sm mb-4">
+              Full-stack MERN theatre ticket booking application
+              with authentication and booking features.
             </p>
 
-            <div class="flex flex-wrap gap-2 mb-5">
-
-              <span class="text-xs px-3 py-1 rounded-full bg-green-500/10 text-green-400 border border-green-500/20">
-                MongoDB
-              </span>
-
-              <span class="text-xs px-3 py-1 rounded-full bg-gray-500/10 text-gray-300 border border-gray-500/20">
-                Express.js
-              </span>
-
-              <span class="text-xs px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
-                React.js
-              </span>
-
-              <span class="text-xs px-3 py-1 rounded-full bg-lime-500/10 text-lime-400 border border-lime-500/20">
-                Node.js
-              </span>
-
-            </div>
-
-            <a href="https://github.com/TejDabhi/Tej-Theatre"
-               target="_blank"
-               class="inline-flex items-center gap-2 text-sm text-indigo-400 hover:text-white transition font-medium">
-
-              View Project
-              <i class="fas fa-arrow-right text-xs"></i>
-
+            <a
+              href="https://github.com/TejDabhi/Tej-Theatre"
+              target="_blank"
+              class="text-indigo-400"
+            >
+              View Project →
             </a>
 
           </div>
         </div>
 
-        <!-- Project 3 -->
+        <!-- Project -->
         <div class="card-hover glass rounded-2xl overflow-hidden">
 
-          <div class="h-44 bg-gradient-to-br from-purple-600/20 to-pink-600/20 flex items-center justify-center">
-            <i class="fas fa-user-shield text-5xl text-purple-400/60"></i>
+          <div
+            class="h-44 bg-gradient-to-br from-purple-600/20 to-pink-600/20 flex items-center justify-center"
+          >
+            <i class="fas fa-user-shield text-5xl text-purple-400"></i>
           </div>
 
           <div class="p-6">
 
             <h3 class="text-white font-bold text-lg mb-2">
-              MERN Authentication System
+              MERN Authentication
             </h3>
 
-            <p class="text-gray-500 text-sm mb-4 leading-relaxed">
-              A secure authentication system built with the MERN stack featuring
-              user registration, login, password hashing with bcrypt,
-              JWT authentication, and protected routes.
+            <p class="text-gray-500 text-sm mb-4">
+              Secure MERN authentication system using JWT and bcrypt.
             </p>
 
-            <div class="flex flex-wrap gap-2 mb-5">
-
-              <span class="text-xs px-3 py-1 rounded-full bg-green-500/10 text-green-400 border border-green-500/20">
-                MongoDB
-              </span>
-
-              <span class="text-xs px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
-                React.js
-              </span>
-
-              <span class="text-xs px-3 py-1 rounded-full bg-lime-500/10 text-lime-400 border border-lime-500/20">
-                Node.js
-              </span>
-
-              <span class="text-xs px-3 py-1 rounded-full bg-purple-500/10 text-purple-400 border border-purple-500/20">
-                JWT
-              </span>
-
-            </div>
-
-            <a href="https://github.com/TejDabhi/Basic-Mern-Stack-Projects/tree/main/9.Login%20Logout%20Authentication"
-               target="_blank"
-               class="inline-flex items-center gap-2 text-sm text-indigo-400 hover:text-white transition font-medium">
-
-              View Project
-              <i class="fas fa-arrow-right text-xs"></i>
-
+            <a
+              href="https://github.com/TejDabhi"
+              target="_blank"
+              class="text-indigo-400"
+            >
+              View Project →
             </a>
 
           </div>
         </div>
 
-      </div>
-    </div>
-  </div>
-</section>
-
-  <!-- ============ CONTACT SECTION ============ -->
-  <section id="contact" class="py-24 bg-dark-800/50">
-    <div class="max-w-6xl mx-auto px-6">
-      <div class="fade-in">
-        <p class="text-indigo-400 font-semibold text-sm tracking-widest uppercase mb-2">Get In Touch</p>
-        <h2 class="text-4xl font-bold text-white mb-12">Contact Me</h2>
-
-        <div class="grid md:grid-cols-2 gap-12">
-          <!-- Contact Form -->
-          <form id="contactForm" class="space-y-5" onsubmit="return handleSubmit(event)">
-            <div>
-              <input type="text" placeholder="Your Name" required class="input-field w-full px-5 py-3.5 rounded-xl bg-dark-700 border border-gray-800 text-white placeholder-gray-600 outline-none transition text-sm">
-            </div>
-            <div>
-              <input type="email" placeholder="Your Email" required class="input-field w-full px-5 py-3.5 rounded-xl bg-dark-700 border border-gray-800 text-white placeholder-gray-600 outline-none transition text-sm">
-            </div>
-            <div>
-              <textarea rows="5" placeholder="Your Message" required class="input-field w-full px-5 py-3.5 rounded-xl bg-dark-700 border border-gray-800 text-white placeholder-gray-600 outline-none transition text-sm resize-none"></textarea>
-            </div>
-            <button type="submit" class="btn-primary w-full py-3.5 rounded-xl text-white font-semibold inline-flex items-center justify-center gap-2">
-              <i class="fas fa-paper-plane"></i> Send Message
-            </button>
-          </form>
-
-          <!-- Contact Info -->
-          <div class="space-y-6">
-            <p class="text-gray-400 leading-relaxed">
-              I'm actively looking for internship opportunities in MERN STACK. Feel free to reach out — I'd love to connect!
-            </p>
-            <div class="space-y-4">
-              <a href="mailto:vanraom56@gmail.com" class="flex items-center gap-4 glass rounded-xl p-4 hover:border-indigo-500/30 transition group">
-                <div class="w-12 h-12 rounded-lg bg-indigo-500/10 flex items-center justify-center">
-                  <i class="fas fa-envelope text-indigo-400"></i>
-                </div>
-                <div>
-                  <p class="text-gray-500 text-xs">Email</p>
-                  <p class="text-white text-sm group-hover:text-indigo-400 transition">tejdabhi84@gmail.com</p>
-                </div>
-              </a>
-              <a href="tel:7359685715" class="flex items-center gap-4 glass rounded-xl p-4 hover:border-indigo-500/30 transition group">
-                <div class="w-12 h-12 rounded-lg bg-cyan-500/10 flex items-center justify-center">
-                  <i class="fas fa-phone text-cyan-400"></i>
-                </div>
-                <div>
-                  <p class="text-gray-500 text-xs">Phone</p>
-                  <p class="text-white text-sm group-hover:text-cyan-400 transition">7359685715</p>
-                </div>
-              </a>
-              <a href="https://www.linkedin.com/in/tej-dabhi/" target="_blank" class="flex items-center gap-4 glass rounded-xl p-4 hover:border-indigo-500/30 transition group">
-                <div class="w-12 h-12 rounded-lg bg-blue-500/10 flex items-center justify-center">
-                  <i class="fab fa-linkedin-in text-blue-400"></i>
-                </div>
-                <div>
-                  <p class="text-gray-500 text-xs">LinkedIn</p>
-                  <p class="text-white text-sm group-hover:text-blue-400 transition">Tej Dabhi</p>
-                </div>
-              </a>
-              <a href="https://github.com/TejDabhi" target="_blank" class="flex items-center gap-4 glass rounded-xl p-4 hover:border-indigo-500/30 transition group">
-                <div class="w-12 h-12 rounded-lg bg-gray-500/10 flex items-center justify-center">
-                  <i class="fab fa-github text-gray-400"></i>
-                </div>
-                <div>
-                  <p class="text-gray-500 text-xs">GitHub</p>
-                  <p class="text-white text-sm group-hover:text-gray-300 transition">TejDabhi</p>
-                </div>
-              </a>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </section>
 
-  <!-- ============ FOOTER ============ -->
-  <footer class="py-8 border-t border-gray-800/50">
-    <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-600">
-      <p>&copy; 2026 <span class="gradient-text font-semibold">Tej Dabhi</span>. All rights reserved.</p>
-      <div class="flex gap-5">
-        <a href="https://github.com/TejDabhi" target="_blank" class="hover:text-white transition"><i class="fab fa-github"></i></a>
-        <a href="https://www.linkedin.com/in/tej-dabhi/" target="_blank" class="hover:text-white transition"><i class="fab fa-linkedin-in"></i></a>
-        <a href="mailto:tejdabhi84@gmail.com.com" class="hover:text-white transition"><i class="fas fa-envelope"></i></a>
+  <!-- CONTACT -->
+  <section id="contact" class="py-24 bg-dark-800/50">
+
+    <div class="max-w-6xl mx-auto px-6 fade-in">
+
+      <p
+        class="text-indigo-400 font-semibold text-sm uppercase mb-2"
+      >
+        Contact
+      </p>
+
+      <h2 class="text-4xl font-bold text-white mb-12">
+        Get In Touch
+      </h2>
+
+      <div class="grid md:grid-cols-2 gap-12">
+
+        <form class="space-y-5">
+
+          <input
+            type="text"
+            placeholder="Your Name"
+            class="w-full px-5 py-3 rounded-xl bg-dark-700 border border-gray-800 outline-none"
+          >
+
+          <input
+            type="email"
+            placeholder="Your Email"
+            class="w-full px-5 py-3 rounded-xl bg-dark-700 border border-gray-800 outline-none"
+          >
+
+          <textarea
+            rows="5"
+            placeholder="Your Message"
+            class="w-full px-5 py-3 rounded-xl bg-dark-700 border border-gray-800 outline-none resize-none"
+          ></textarea>
+
+          <button
+            class="btn-primary w-full py-3 rounded-xl text-white font-semibold"
+          >
+            Send Message
+          </button>
+
+        </form>
+
+        <div class="space-y-5">
+
+          <div class="glass rounded-xl p-4">
+            <p class="text-gray-500 text-sm">Email</p>
+            <p class="text-white">tejdabhi84@gmail.com</p>
+          </div>
+
+          <div class="glass rounded-xl p-4">
+            <p class="text-gray-500 text-sm">Phone</p>
+            <p class="text-white">7359685715</p>
+          </div>
+
+          <div class="glass rounded-xl p-4">
+            <p class="text-gray-500 text-sm">Location</p>
+            <p class="text-white">Vadodara, Gujarat</p>
+          </div>
+
+        </div>
+
       </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-8 border-t border-gray-800">
+
+    <div
+      class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500"
+    >
+
+      <p>
+        © 2026
+        <span class="gradient-text font-semibold">
+          Tej Dabhi
+        </span>
+      </p>
+
+      <div class="flex gap-5">
+
+        <a href="https://github.com/TejDabhi" target="_blank">
+          <i class="fab fa-github"></i>
+        </a>
+
+        <a
+          href="https://www.linkedin.com/in/tej-dabhi/"
+          target="_blank"
+        >
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+
+      </div>
+
     </div>
   </footer>
 
-  <!-- ============ JAVASCRIPT ============ -->
+  <!-- JAVASCRIPT -->
   <script>
-    // Navbar scroll effect
-    const navbar = document.getElementById('navbar');
-    window.addEventListener('scroll', () => {
-      navbar.classList.toggle('glass', window.scrollY > 50);
+
+    // NAVBAR SCROLL EFFECT
+    const navbar = document.getElementById("navbar");
+
+    window.addEventListener("scroll", () => {
+      navbar.classList.toggle("glass", window.scrollY > 50);
     });
 
-    // Mobile menu toggle
-    const menuBtn = document.getElementById('menuBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
-    menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
-    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+    // MOBILE MENU
+    const menuBtn = document.getElementById("menuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
 
-    // Scroll animations
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-    }, { threshold: 0.15 });
-    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    menuBtn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+    });
 
-    // Contact form handler
-    function handleSubmit(e) {
-      e.preventDefault();
-      const btn = e.target.querySelector('button[type="submit"]');
-      btn.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
-      btn.classList.add('!bg-green-600');
-      setTimeout(() => {
-        btn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
-        btn.classList.remove('!bg-green-600');
-        e.target.reset();
-      }, 3000);
-      return false;
+    // FADE IN
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      },
+      {
+        threshold: 0.2,
+      }
+    );
+
+    document.querySelectorAll(".fade-in").forEach((el) => {
+      observer.observe(el);
+    });
+
+    // THEME TOGGLE
+    const themeToggle = document.getElementById("themeToggle");
+    const themeToggleMobile = document.getElementById(
+      "themeToggleMobile"
+    );
+
+    function toggleTheme() {
+
+      document.body.classList.toggle("light-mode");
+
+      const isLight =
+        document.body.classList.contains("light-mode");
+
+      const icon = isLight
+        ? '<i class="fas fa-sun"></i>'
+        : '<i class="fas fa-moon"></i>';
+
+      themeToggle.innerHTML = icon;
+      themeToggleMobile.innerHTML = icon;
     }
+
+    themeToggle.addEventListener("click", toggleTheme);
+    themeToggleMobile.addEventListener("click", toggleTheme);
+
   </script>
+
 </body>
 </html>
