@@ -10,7 +10,7 @@ This portfolio showcases my skills, projects, experience, and contact informatio
 # 🌐 Live Demo
 
 🔗 Portfolio Live:  
-https://your-portfolio-link.com
+https://tejdabhi.github.io/
 
 ---
 
