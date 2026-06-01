@@ -188,6 +188,17 @@
     body.light-mode nav {
       background: rgba(255, 255, 255, 0.8);
     }
+    /* Typing Effect */
+    #typing-name::after {
+      content: "|";
+      animation: blink 0.8s infinite;
+    }
+    
+    @keyframes blink {
+      50% {
+        opacity: 0;
+      }
+    }
   </style>
 </head>
 
@@ -303,9 +314,7 @@
           class="text-5xl md:text-7xl font-black leading-tight text-white mb-6"
         >
           Hi, I'm
-          <span class="gradient-text">
-            Tej Dabhi
-          </span>
+          <span id="typing-name" class="gradient-text"></span>
         </h1>
 
         <p class="text-xl md:text-2xl text-gray-400 mb-6">
@@ -920,6 +929,36 @@
 
     themeToggle.addEventListener("click", toggleTheme);
     themeToggleMobile.addEventListener("click", toggleTheme);
+    // TYPING EFFECT
+    const text = "Tej Dabhi";
+    const typingElement = document.getElementById("typing-name");
+    
+    let i = 0;
+    let isDeleting = false;
+    
+    function typeEffect() {
+      if (!isDeleting) {
+        typingElement.textContent = text.substring(0, i + 1);
+        i++;
+    
+        if (i === text.length) {
+          isDeleting = true;
+          setTimeout(typeEffect, 1500); // pause before deleting
+          return;
+        }
+      } else {
+        typingElement.textContent = text.substring(0, i - 1);
+        i--;
+    
+        if (i === 0) {
+          isDeleting = false;
+        }
+      }
+    
+      setTimeout(typeEffect, isDeleting ? 80 : 150);
+    }
+    
+    typeEffect();
 
   </script>
 
